@@ -1,6 +1,6 @@
 let myLeads=[];
 // console.log(typeof myLeads);
-// myLeads=JSON.stringify(myLeads);        //will convert the array(object) to a string( so that can be stored in localstorage). 
+// myLeads=JSON.stringify(myLeads);        //will convert the array(object) to a string(so that can be stored in localstorage). 
 // console.log(typeof myLeads);
 // myLeads=JSON.parse(myLeads);            //will convert a string to an array.
 // console.log(typeof myLeads);
@@ -11,7 +11,7 @@ const ulEl=document.getElementById("ul-el");
 const inputBtn=document.getElementById("input-btn");
 const deleteBtn=document.getElementById("delete-btn");
 
-deleteBtn.addEventListener("dblclick",function(){              //delete all
+deleteBtn.addEventListener("dblclick",function(){             //delete all
     localStorage.clear();
     myLeads=[];
     renderLead();
@@ -52,8 +52,8 @@ inputBtn.addEventListener("click",function()
     localStorage.setItem("myLeads",myLeads);    // were getting overwrote on refreshing before writing truthy value conditional code
     myLeads=JSON.parse(myLeads);
     /* or simply use: localStorage.setItem("myLeads",JSON.stringify(myLeads));   
-       becuase it will stringify the array onle when involked and 
-       also will not permanntly make the array a string so we will not have to use parse afterwards*/
+       becuase it will stringify the array only when involked and 
+       also will not permantly make the array a string so we will not have to use parse afterwards*/
     inputEl.value="";
     renderLead();
 });
@@ -74,7 +74,7 @@ function renderLead()                         // will print all the leads on scr
 
     for(let i=0;i< myLeads.length;i++)
     {
-        listItems += "<li><a href=' " + myLeads[i] + " ' target='_main' >"+ myLeads[i]+"</a></li>" ;      //becuade DOM manipulation comes with a cost ( therefore rather than updating the innerHTML 3 times we can use it outside the loop just one time )
+        listItems += "<li><a href=' " + myLeads[i] + " ' target='_main' >"+ myLeads[i]+"</a></li>" ;      //because DOM manipulation comes with a cost ( therefore rather than updating the innerHTML 3 times we can use it outside the loop just one time )
     }                   /* or 
 
                               ` <li>

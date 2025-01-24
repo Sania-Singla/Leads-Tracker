@@ -5,7 +5,7 @@ const ulEl = document.getElementById("ul-el");
 const inputBtn = document.getElementById("input-btn");
 const deleteBtn = document.getElementById("delete-btn");
 
-deleteBtn.addEventListener("dblclick", function () {
+deleteBtn.addEventListener("click", function () {
     localStorage.clear();
     myLeads = [];
     renderLead();
